@@ -1,0 +1,29 @@
+<?xml version = "1.0"?>
+<project name = "Test Project" basedir = "." default = "build">
+   <tstamp>
+      <format property="time.stamp" pattern="yyyy-MM-dd_HH:mm:ss" />
+   </tstamp>
+   <property name = "results" location = "${selenium.results.dir}/Results-${time.stamp}.html" />
+   <property file = "build.properties"/>
+   <property name = "src.dir" value ="test"/>
+   <property name = "build.dir" value ="classes"/>
+   <path id = "master-classpath">
+      <fileset dir = "${build.dir}/lib">
+         <include name = "*.jar"/>
+      </fileset>
+   </path>
+   <target name = "build" description = "Compile all .java files">
+      <mkdir dir = "${build.dir}"/>
+      <javac destdir = "${build.dir}" includeantruntime ="false">
+         <src path = "${src.dir}"/>
+         <classpath refid = "master-classpath"/>
+      </javac>
+   </target>
+   <target name = "clean" description = "Clean output">
+      <delete>
+         <fileset dir = "${build.dir}">
+            <include name = "**/*.class"/>
+         </fileset>
+      </delete>
+   </target>
+</project>
