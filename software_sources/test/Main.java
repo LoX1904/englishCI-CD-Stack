@@ -16,7 +16,7 @@ public class Main{
     System.out.println(f.add(value, 2));
     f.sayHI();
     
-    System.out.println("Hello");
+    System.out.println("Hellob");
     Bla.ausgeben("Test");
 
   }
