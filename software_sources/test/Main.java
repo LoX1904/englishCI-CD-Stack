@@ -11,6 +11,7 @@ public class Main{
     Scanner s = new Scanner(System.in);
     int value = s.nextInt();
     
+    thorw new NullPointerException();
     
     Func f = new Func();
     System.out.println(f.add(value, 2));
